@@ -1,6 +1,8 @@
 const express = require('express');
 const cors  = require('cors'); 
 const app = express();  
+const userRouter = require('../router/bookRouter'); 
+const {connect} = require('../db/db');
 
 // use middleware to form the contract for incoming requests
 app.use(express.json());  
@@ -19,6 +21,8 @@ app.get('/', (req, res, next) => {
 ); 
 
 // routers 
+
+app.use('/users', userRouter);
 
 
 
@@ -44,6 +48,7 @@ app.use((error, req, res, next) => {
 }
 );
 
+connect();
 
 
 module.exports = app;  
