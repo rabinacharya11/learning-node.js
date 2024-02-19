@@ -6,11 +6,11 @@
   "scripts": {
     "test": "jest --coverage",
     "start": "nodemon server.js"
-
   },
   "author": "Rabin Acharya",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.4",
     "express": "^4.18.2"
   },
